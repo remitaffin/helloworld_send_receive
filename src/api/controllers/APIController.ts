@@ -18,9 +18,4 @@ export class APIController {
         };
     }
 
-    @Get('/get_from_queue')
-    public async get_from_queue(): Promise<any> {
-        return await qm.get_message(env.rabbitmq);
-    }
-
 }
