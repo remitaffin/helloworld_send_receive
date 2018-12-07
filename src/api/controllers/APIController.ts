@@ -9,8 +9,9 @@ export class APIController {
     public async send_to_queue(): Promise<any> {
         let successfulCall: boolean;
         const body = {
+            type: 'api',
             method: 'POST',
-            message: 'http://url/endpoint?test=1',
+            message: 'http://url/endpoint?test=3',
         };
         successfulCall = await qm.send_message(env.rabbitmq, body);
         return {
